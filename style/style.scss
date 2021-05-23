@@ -1,0 +1,101 @@
+/* IMPORTS */
+@import "normalize";
+
+/* TYPO */
+$font-size : 15px;
+$font-regular : 'Lexend Deca', sans-serif;
+$font-bold : 'Big Shoulders Display', sans-serif;
+
+
+/* PRIMARY COLORS */
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+
+/* NEUTRAL COLORS */
+$paragraphs-color : hsla(0, 0%, 100%, 0.75); // (paragraphs)
+$headings-color: hsl(0, 0%, 95%); // (background, headings, buttons)
+
+
+/* LAYOUT */
+$mobile-width : 375px;
+$desktop-width : 1440px;
+
+
+/* CUSTOM */
+body{
+    height: 100%;
+    background: red;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $headings-color;
+    height: 100%;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 6rem 1.6rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card{
+    align-items: stretch;
+    padding: 3rem;
+    &__title{
+        color: $headings-color;
+        font-family: $font-bold;
+        font-size: 2.5rem;
+    }
+    &__description{
+        color: $paragraphs-color;
+        font-family: $font-regular;
+        line-height: 2rem;
+    }
+    &__button{
+        font-weight: 600;
+        font-family: $font-regular;
+        mix-blend-mode: screen;
+        border-radius: $font-size*2;
+        margin-top: 1.5rem;
+        padding: 0.9rem 2rem;
+        border: 2px solid $headings-color;
+        &:hover{
+            background: none;
+            color: $headings-color;
+        }
+    }
+}
+
+.sedans{
+    background: $bright-orange;
+}
+.suvs{
+    background: $dark-cyan;
+}
+.luxury{
+    background: $very-dark-cyan;
+}
+
+@media (min-width : $desktop-width) {
+    body{
+        height: 100vh;
+    }
+    .wrapper{
+        height: 100%;
+    }
+    .main{
+        display: flex;
+        flex-direction: row;
+        width: 53%;
+    }
+    .card{
+        &__button{
+            margin-top: 7rem;
+        }
+    }
+}
